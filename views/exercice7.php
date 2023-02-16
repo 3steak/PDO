@@ -5,8 +5,8 @@
             <h2 class="text-white">Listes des clients !</h2>
             <div class="row">
                 <?php foreach ($listClients as $client) { ?>
-                    <div class="col-12 col-lg-4 m-2 mx-auto text-center wrapper">
-                        <div class="card cardtest">
+                    <div class="col-12 col-lg-4 m-2 mx-auto text-center">
+                        <div class="card">
                             <div class="card-body">
                                 <p class="card-text">Prénom : <?= $client->firstName ?> Nom : <?= $client->lastName ?>. Possède une carte ?
                                     <?php
