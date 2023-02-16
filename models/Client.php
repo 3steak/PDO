@@ -47,7 +47,11 @@ function getLoyaltyClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
 
-    $request = "SELECT `firstName`, `lastName` FROM `clients` WHERE `card` = 1";
+    $request = "SELECT lastName, firstName
+    FROM `clients` 
+    JOIN `cards`
+    ON `cards`.`cardNumber`= `clients`.`cardNumber`
+    WHERE `cardTypesId`=1;";
 
 
     $sth = $db->prepare($request);
@@ -82,7 +86,9 @@ function getListClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
 
-    $request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cardNumber` FROM `clients`";
+    $request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` FROM `clients` LEFT JOIN  `cards` ON `cards`.`cardNumber`= `clients`.`cardNumber`;";
+
+
 
 
     $sth = $db->prepare($request);

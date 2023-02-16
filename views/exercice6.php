@@ -6,11 +6,12 @@
             </h2>
             <div class="row">
                 <?php foreach ($shows as $show) {
-                    echo '<div class="col-4 m-2 mx-auto text-center">
+                    $showDate =  datefmt_format(DATE_FORMATTER, strtotime($show->date));
+                    echo '<div class="col-12 col-lg-4 m-2 mx-auto text-center">
                     <div class="card" style="width: 18rem;">
                         <div class="card-body">
                         <h5 class="card-title"> Spectacle ' . $show->title  . '</h5>
-                            <p class="card-text">Réalisé par ' . $show->performer . 'le ' . $show->date . ' à ' . $show->startTime . '</p>
+                            <p class="card-text">Réalisé par <span>' . $show->performer . '</span> le ' . $showDate . ' à ' . $show->startTime . '</p>
                         </div>
                     </div>
                   </div>';
