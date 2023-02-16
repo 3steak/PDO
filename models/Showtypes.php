@@ -1,5 +1,10 @@
 <?php
 
+/** permet de retourner les différents types de spectacles
+ * getShowtypes
+ *
+ * @return array
+ */
 function getShowtypes()
 {
     include_once(__DIR__ . '/../config/connect.php');

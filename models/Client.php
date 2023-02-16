@@ -1,6 +1,11 @@
 <?php
 
 
+/** Fonction qui me permet de récupérer la liste des clients
+ * getClients
+ *
+ * @return array
+ */
 function getClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
@@ -14,6 +19,11 @@ function getClients()
 }
 
 
+/** Fonction qui me permet de recupérer la liste des 20 premiers clients
+ * getTwentyClients
+ *
+ * @return array
+ */
 function getTwentyClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
@@ -28,6 +38,11 @@ function getTwentyClients()
 }
 
 
+/** Permet de retourner les clients loyales 
+ * getLoyaltyClients
+ *
+ * @return array
+ */
 function getLoyaltyClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
@@ -41,6 +56,11 @@ function getLoyaltyClients()
     return $loyaltyClients;
 }
 
+/** Fonction qui permet de retourner par ordre alphabétique les clients dont le nom commence par la lettre M 
+ * getMClients
+ *
+ * @return array
+ */
 function getMClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
@@ -53,6 +73,11 @@ function getMClients()
     return $mClients;
 }
 
+/** Fonction ermet de retourner la liste des clients avec date de naissance et numéro de carte de fidélité
+ * getListClients
+ *
+ * @return array
+ */
 function getListClients()
 {
     include_once(__DIR__ . '/../config/connect.php');
