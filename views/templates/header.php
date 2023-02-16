@@ -9,8 +9,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <title>Colyseum</title>
 </head>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="/controllers/homeCtrl.php">Navbar</a>
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-2">
+    <a class="navbar-brand" href="/controllers/homeCtrl.php">Accueil</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -19,27 +19,27 @@
         <ul class="navbar-nav mr-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="/controllers/clientCtrl.php">Exercice1</a>
+                <a class="nav-link ms-4" href="/controllers/clientCtrl.php">Exercice 1</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/controllers/showtypesCtrl.php">Exercice2</a>
+                <a class="nav-link ms-4" href="/controllers/showtypesCtrl.php">Exercice 2</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Exercice3</a>
+                <a class="nav-link ms-4" href="/controllers/twentyClientsCtrl.php">Exercice 3</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Exercice4</a>
+                <a class="nav-link ms-4" href="/controllers/loyaltyClientsCtrl.php">Exercice 4</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Exercice5</a>
+                <a class="nav-link ms-4" href="/controllers/mClientsCtrl.php">Exercice 5</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Exercice6</a>
+                <a class="nav-link ms-4" href="/controllers/showsCtrl.php">Exercice 6</a>
             </li>
-
-
+            <li class="nav-item">
+                <a class="nav-link ms-4" href="/controllers/listClientsCtrl.php">Exercice 7</a>
+            </li>
         </ul>
-
     </div>
 </nav>
 

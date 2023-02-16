@@ -6,7 +6,8 @@ function getShowtypes()
 
     $request = "SELECT type FROM showtypes";
 
-    $stmt = $db->query($request);
-    $showtypes = $stmt->fetchAll();
+    $sth = $db->prepare($request);
+    $sth->execute();
+    $showtypes = $sth->fetchAll(PDO::FETCH_OBJ);
     return $showtypes;
 }

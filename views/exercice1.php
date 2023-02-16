@@ -5,7 +5,7 @@
             <h2>Afficher les clients :</h2>
             <ul>
                 <?php foreach ($clients as $client) {
-                    echo "<li> $client[1]</li>";
+                    echo "<li> $client->firstName</li>";
                 } ?>
 
             </ul>

@@ -3,6 +3,22 @@
     padding: 0;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;900&display=swap');
+
+/* font-family: 'Montserrat Alternates', sans-serif; */
+
+
 ul li {
     list-style-type: none;
+}
+
+h1,
+h2 {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 900;
+}
+
+p {
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-weight: 400;
 }
