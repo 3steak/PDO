@@ -1,8 +1,4 @@
 <?php
-
-include_once(__DIR__ . '/../models/Shows.php');
-$shows = getShows();
-
 // Formattage de ma date en format FR 
 $dateformatter = new IntlDateFormatter(
     'fr_FR',
@@ -14,6 +10,8 @@ $dateformatter = new IntlDateFormatter(
 );
 define('DATE_FORMATTER', $dateformatter);
 
+include_once(__DIR__ . '/../models/Shows.php');
+$shows = getShows();
 
 include_once(__DIR__ . '/../views/templates/header.php');
 

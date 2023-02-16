@@ -1,9 +1,11 @@
-<div class="container">
+<div class="container dark-mode">
     <div class="row">
         <div class="col-12">
             <h1 class="text-center">Exercice 6</h1>
             <h2>Les spectacles par ordre alphabétique.
             </h2>
+            <input type="checkbox" class="checkbox m-4" id="checkbox">
+            <label for="checkbox" class="switch"></label>
             <div class="row">
                 <?php foreach ($shows as $show) {
                     $showDate =  datefmt_format(DATE_FORMATTER, strtotime($show->date));
