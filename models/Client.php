@@ -82,17 +82,22 @@ function getMClients()
  *
  * @return array
  */
-function getListClients()
-{
-    include_once(__DIR__ . '/../config/connect.php');
+// function getListClients()
+// {
+//     include_once(__DIR__ . '/../config/connect.php');
 
-    $request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` FROM `clients` LEFT JOIN  `cards` ON `cards`.`cardNumber`= `clients`.`cardNumber`;";
-
-
+//     $request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` FROM `clients` LEFT JOIN  `cards` ON `cards`.`cardNumber`= `clients`.`cardNumber`;";
 
 
-    $sth = $db->prepare($request);
-    $sth->execute();
-    $listClients = $sth->fetchAll(PDO::FETCH_OBJ);
-    return $listClients;
-}
+//     $sth = $db->prepare($request);
+//     $sth->execute();
+//     $listClients = $sth->fetchAll(PDO::FETCH_OBJ);
+//     return $listClients;
+// }
+
+require_once(__DIR__ . '/../helpers/db.php');
+
+$db = new Database();
+// var_dump($db);
+$request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` FROM `clients` LEFT JOIN  `cards` ON `cards`.`cardNumber`= `clients`.`cardNumber`;";
+$listClients = $db->executeRequest($request);
