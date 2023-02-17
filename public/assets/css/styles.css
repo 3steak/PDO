@@ -30,6 +30,7 @@ p {
 
 span {
     font-weight: bold;
+    color: cornflowerblue;
 }
 
 
@@ -49,4 +50,6 @@ span {
 
 body {
     background: var(--main-bg-color) !important;
+
+    overflow-x: hidden;
 }

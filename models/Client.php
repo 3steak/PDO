@@ -24,11 +24,11 @@ function getClients()
  *
  * @return array
  */
-function getTwentyClients()
+function getTwentyClients(): array
 {
     include_once(__DIR__ . '/../config/connect.php');
 
-    $request = "SELECT `firstName`, `lastName` FROM `clients` LIMIT 20";
+    $request = 'SELECT `firstName`, `lastName` FROM `clients` LIMIT 20';
 
 
     $sth = $db->prepare($request);
@@ -65,7 +65,7 @@ function getLoyaltyClients()
  *
  * @return array
  */
-function getMClients()
+function getMClients(): array
 {
     include_once(__DIR__ . '/../config/connect.php');
 
@@ -99,5 +99,19 @@ require_once(__DIR__ . '/../helpers/db.php');
 
 $db = new Database();
 // var_dump($db);
-$request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` FROM `clients` LEFT JOIN  `cards` ON `cards`.`cardNumber`= `clients`.`cardNumber`;";
+$request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` 
+FROM `clients` LEFT JOIN  `cards` ON `cards`.`cardNumber`= `clients`.`cardNumber`;";
 $listClients = $db->executeRequest($request);
+
+
+//  REQUETE DE LA CORRECTION 
+
+// 'SELECT 
+//             `clients`.`lastName`,
+//             `clients`.`firstName`,
+//             DATE_FORMAT(`clients`.`birthDate`, "%d %b %Y") AS `birthDate`,
+//             IF( `cards`.`cardTypesId`= 1 ,\'oui\',\'non\') AS `fidelity`,
+//             IF(`cards`.`cardTypesId`= 1,`clients`.`cardNumber`,\'\') AS `cardFidelity`
+//             FROM `clients`
+//             LEFT JOIN `cards` ON `cards`.`cardNumber` = `clients`.`cardNumber`;
+//             '

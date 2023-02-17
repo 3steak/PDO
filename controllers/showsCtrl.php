@@ -10,8 +10,16 @@ $dateformatter = new IntlDateFormatter(
 );
 define('DATE_FORMATTER', $dateformatter);
 
-include_once(__DIR__ . '/../models/Shows.php');
+include_once(__DIR__ . '/../models/Show.php');
+
+
+try {
+    //code... FONCTION POUR RECUP LES DONNEES
+} catch (\Throwable $th) {
+    //throw $th;
+}
+
 
 include_once(__DIR__ . '/../views/templates/header.php');
 
-include(__DIR__ . '/../views/exercice6.php');
+include(__DIR__ . '/../views/show/exercice6.php');

@@ -20,13 +20,58 @@ class Database
     }
 
 
-    // je crée une fonction pour preparer et executer ma requette sql
-    public function executeRequest($request)
+
+    /** je crée une fonction pour preparer et executer ma requette sql 
+     * executeRequest
+     *
+     * @param  mixed $request
+     * @return array
+     */
+    public function executeRequest($request): array
     {
-        $stm = $this->connexion->prepare($request);
-        $stm->execute();
-        // je retourne directement le fetch du statement
-        //  qui sera stocké dans une variable
-        return $stm->fetchAll(PDO::FETCH_OBJ);
+        // j'essaie
+        try {
+            $stm = $this->connexion->prepare($request);
+            $stm->execute();
+            // je retourne directement le fetch du statement
+            //  qui sera stocké dans une variable
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+
+            // si erreur ! renvoyer vers 404 ou  message erreur
+        } catch (\Throwable $th) {
+            include_once(__DIR__ . '/../views/templates/header.php');
+            include(__DIR__ . '/../views/errors.php');
+            include_once(__DIR__ . '/../views/templates/footer.php');
+            die;
+        }
     }
+
+
+
+    /** Prepare et execute la requete SQL
+     * queryRequest
+     *
+     * @param  mixed $request
+     * @return array
+     */
+    public function queryRequest($request): array
+    {
+        // j'essaie
+        try {
+            $stm = $this->connexion->query($request);
+            // je retourne directement le fetch du statement
+            //  qui sera stocké dans une variable
+            return $stm->fetchAll(PDO::FETCH_OBJ);
+
+            // si erreur ! renvoyer vers 404 ou  message erreur
+        } catch (\Throwable $th) {
+            include_once(__DIR__ . '/../views/templates/header.php');
+            include(__DIR__ . '/../views/errors.php');
+            include_once(__DIR__ . '/../views/templates/footer.php');
+            die;
+        }
+    }
+
+
+    // FIN CLASS
 }

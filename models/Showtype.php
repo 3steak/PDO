@@ -5,7 +5,7 @@
  *
  * @return array
  */
-function getShowtypes()
+function getShowtypes(): array
 {
     include_once(__DIR__ . '/../config/connect.php');
 
