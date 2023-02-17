@@ -1,1 +1,1 @@
-<p><?= $th->getMessage() ?></p>
+<p><?= $errorMsg ?></p>

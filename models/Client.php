@@ -95,8 +95,8 @@ function getMClients(): array
 //     return $listClients;
 // }
 
+//  CREER UNE METHODE DANS LA CLASSE MODEL 
 require_once(__DIR__ . '/../helpers/db.php');
-
 $db = new Database();
 // var_dump($db);
 $request = "SELECT `firstName`, `lastName`, `birthDate`, `card`, `cards`.`cardtypesId`,`cards`.`cardNumber` 
